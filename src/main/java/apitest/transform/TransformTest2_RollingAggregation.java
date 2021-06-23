@@ -14,7 +14,7 @@ public class TransformTest2_RollingAggregation {
         env.setParallelism(1);
 
         // 读取数据
-        DataStream<String> inputStream = env.readTextFile("/Users/ella/IdeaProjects/test1/src/main/resources/sensor.txt");
+        DataStream<String> inputStream = env.readTextFile("/Users/ella/IdeaProjects/flink_test1/src/main/resources/sensor.txt");
 
         // 转换成 SensorReading 类型
 //        DataStream<SensorReading> dataStream = inputStream.map(new MapFunction<String, SensorReading>() {

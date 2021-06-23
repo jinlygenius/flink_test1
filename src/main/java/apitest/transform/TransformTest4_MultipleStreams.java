@@ -13,7 +13,7 @@ public class TransformTest4_MultipleStreams {
         env.setParallelism(1);
 
         // 读取数据
-        DataStream<String> inputStream = env.readTextFile("/Users/ella/IdeaProjects/test1/src/main/resources/sensor.txt");
+        DataStream<String> inputStream = env.readTextFile("/Users/ella/IdeaProjects/flink_test1/src/main/resources/sensor.txt");
 
         DataStream<SensorReading> dataStream = inputStream.map(line -> {
             String[] fields = line.split(",");
@@ -21,7 +21,7 @@ public class TransformTest4_MultipleStreams {
         });
 
         // 1. 分流，按30度为界，分成2条流
-        dataStream.split()
+//        dataStream.split()
 
         env.execute();
     }

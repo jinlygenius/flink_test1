@@ -13,7 +13,7 @@ public class TransformTest1_Base {
         env.setParallelism(1);
 
         // 读取数据
-        DataStream<String> inputStream = env.readTextFile("/Users/ella/IdeaProjects/test1/src/main/resources/sensor.txt");
+        DataStream<String> inputStream = env.readTextFile("/Users/ella/IdeaProjects/flink_test1/src/main/resources/sensor.txt");
 
         // map - 把 str 转成它的长度输出
         DataStream<Integer> mapStream = inputStream.map(new MapFunction<String, Integer>() {
