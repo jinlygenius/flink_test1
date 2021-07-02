@@ -16,6 +16,7 @@ public class TransformTest5_RichFunction {
         // 读取数据
         DataStream<String> inputStream = env.readTextFile("/Users/ella/IdeaProjects/flink_test1/src/main/resources/sensor.txt");
 
+        // 转成 SensorReading类型
         DataStream<SensorReading> dataStream = inputStream.map(line -> {
             String[] fields = line.split(",");
             return new SensorReading(fields[0], new Long(fields[1]), new Double(fields[2]));
