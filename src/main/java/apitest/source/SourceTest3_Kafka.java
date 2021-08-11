@@ -15,9 +15,11 @@ public class SourceTest3_Kafka {
 
         Properties properties = new Properties();
         properties.setProperty("bootstrap.servers", "localhost:9092");
-        DataStream<String> dataStream = env.addSource(
-                new FlinkKafkaConsumer<String>("sensor", new SimpleStringSchema(), properties)
-        );
+
+
+        FlinkKafkaConsumer<String> kafkaConsumer = new FlinkKafkaConsumer<>("sensor", new SimpleStringSchema(), properties);
+//        kafkaConsumer.setStartFromEarliest();
+        DataStream<String> dataStream = env.addSource(kafkaConsumer);
 
         dataStream.print();
         env.execute();
