@@ -29,8 +29,8 @@ public class TestODPS {
 
         // write to odps
         Properties config = new Properties();
-        config.put("access_id", "LTAI4FeoPEnrjn46jLTkhU6x");
-        config.put("access_key", "Ipb3Y9UNrG2LZpd5qq6JltKVOTYrRi");
+        config.put("access_id", "");
+        config.put("access_key", "");
         config.put("project_name", "sparrow_pro_dev");
         // config.put("charset", "...");
         Connection conn = DriverManager.getConnection("jdbc:odps:http://service.cn-beijing.maxcompute.aliyun.com/api", config);
